@@ -1,0 +1,16 @@
+[
+    {
+        "ip": "192.168.1.1",
+        "mac": "aa:bb:cc:dd:ee:ff",
+        "vendor": "MikroTik",
+        "asset_type": "Network Infrastructure",
+        "risk_hint": "Management or critical network asset"
+    },
+    {
+        "ip": "192.168.1.45",
+        "mac": "11:22:33:44:55:66",
+        "vendor": "Hikvision",
+        "asset_type": "Camera / IoT",
+        "risk_hint": "Surveillance or unmanaged IoT asset"
+    }
+]
