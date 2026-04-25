@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pharos Network Visibility Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #0f172a; color: #e5e7eb; }
+        header { padding: 32px; background: #111827; border-bottom: 1px solid #374151; }
+        main { padding: 32px; }
+        h1 { margin: 0 0 8px 0; font-size: 32px; }
+        .subtitle { color: #9ca3af; }
+        .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin: 24px 0; }
+        .card { background: #1f2937; border: 1px solid #374151; border-radius: 14px; padding: 18px; }
+        .metric { display: block; font-size: 30px; font-weight: 700; }
+        .label { display: block; color: #9ca3af; margin-top: 6px; }
+        table { width: 100%; border-collapse: collapse; background: #111827; border-radius: 14px; overflow: hidden; }
+        th, td { padding: 12px 14px; border-bottom: 1px solid #374151; text-align: left; vertical-align: top; }
+        th { background: #1f2937; color: #f9fafb; }
+        td { color: #d1d5db; }
+        footer { margin-top: 24px; color: #9ca3af; font-size: 13px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pharos Network Visibility Report</h1>
+        <div class="subtitle">Range: 192.168.1.0/24 | Assets: 8 | Generated: 2026-04-25 14:55:25 UTC</div>
+    </header>
+    <main>
+        <section class="summary">
+            
+        <div class="card">
+            <span class="metric">1</span>
+            <span class="label">Endpoint / Mobile</span>
+        </div>
+        
+
+        <div class="card">
+            <span class="metric">1</span>
+            <span class="label">Generic Network Asset</span>
+        </div>
+        
+
+        <div class="card">
+            <span class="metric">1</span>
+            <span class="label">Network Infrastructure</span>
+        </div>
+        
+
+        <div class="card">
+            <span class="metric">1</span>
+            <span class="label">Printer / Office Device</span>
+        </div>
+        
+
+        <div class="card">
+            <span class="metric">2</span>
+            <span class="label">Smart Home / IoT</span>
+        </div>
+        
+
+        <div class="card">
+            <span class="metric">2</span>
+            <span class="label">Workstation / Endpoint</span>
+        </div>
+        
+        </section>
+        <section>
+            <table>
+                <thead>
+                    <tr>
+                        <th>IP Address</th>
+                        <th>MAC Address</th>
+                        <th>Vendor</th>
+                        <th>Asset Type</th>
+                        <th>Risk Hint</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+        <tr>
+            <td>192.168.1.1</td>
+            <td>74:24:9f:80:b5:d1</td>
+            <td>TIBRO Corp.</td>
+            <td>Network Infrastructure</td>
+            <td>Management or critical network asset - validate admin exposure</td>
+        </tr>
+        
+
+        <tr>
+            <td>192.168.1.30</td>
+            <td>00:c3:f4:ed:2b:ec</td>
+            <td>Samsung Electronics Co.,Ltd</td>
+            <td>Endpoint / Mobile</td>
+            <td>User-controlled endpoint - validate ownership and access policy</td>
+        </tr>
+        
+
+        <tr>
+            <td>192.168.1.62</td>
+            <td>60:de:f4:85:e7:a4</td>
+            <td>Shenzhen iComm Semiconductor CO.,LTD</td>
+            <td>Generic Network Asset</td>
+            <td>Review ownership, business purpose, and monitoring coverage</td>
+        </tr>
+        
+
+        <tr>
+            <td>192.168.1.27</td>
+            <td>60:45:2e:71:dc:fc</td>
+            <td>Intel Corporate</td>
+            <td>Workstation / Endpoint</td>
+            <td>Endpoint-class device - validate EDR and patch coverage</td>
+        </tr>
+        
+
+        <tr>
+            <td>192.168.1.146</td>
+            <td>e8:16:56:28:b7:33</td>
+            <td>Hangzhou BroadLink Technology Co.,Ltd</td>
+            <td>Smart Home / IoT</td>
+            <td>IoT device - verify isolation, firmware posture, and business need</td>
+        </tr>
+        
+
+        <tr>
+            <td>192.168.1.199</td>
+            <td>f0:c9:d1:32:ba:2c</td>
+            <td>GD Midea Air-Conditioning Equipment Co.,Ltd.</td>
+            <td>Smart Home / IoT</td>
+            <td>IoT device - verify isolation, firmware posture, and business need</td>
+        </tr>
+        
+
+        <tr>
+            <td>192.168.1.200</td>
+            <td>d4:f3:2d:3f:39:eb</td>
+            <td>Intel Corporate</td>
+            <td>Workstation / Endpoint</td>
+            <td>Endpoint-class device - validate EDR and patch coverage</td>
+        </tr>
+        
+
+        <tr>
+            <td>192.168.1.181</td>
+            <td>58:05:d9:0f:09:4b</td>
+            <td>Seiko Epson Corporation</td>
+            <td>Printer / Office Device</td>
+            <td>Often overlooked office asset - review admin interface and firmware</td>
+        </tr>
+        
+                </tbody>
+            </table>
+        </section>
+        <footer>
+            Pharos provides asset visibility hints for authorized internal assessment and inventory workflows.
+        </footer>
+    </main>
+</body>
+</html>
