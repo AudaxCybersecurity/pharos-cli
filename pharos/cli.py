@@ -4,6 +4,7 @@ from rich.table import Table
 
 from pharos.banner import print_banner
 from pharos.exporters import export_csv, export_json
+from pharos.report import generate_html_report
 from pharos.scanner import scan_network
 
 app = typer.Typer(help="Pharos - Local network visibility from the command line.")
@@ -16,6 +17,7 @@ def main(
     timeout: int = typer.Option(2, "--timeout", "-t", help="ARP response timeout"),
     json_out: str = typer.Option(None, "--json", help="Export results to JSON file"),
     csv_out: str = typer.Option(None, "--csv", help="Export results to CSV file"),
+    html_out: str = typer.Option(None, "--html", help="Generate standalone HTML report"),
 ):
     print_banner()
     console.print(f"[bold green][+] Scanning range:[/bold green] {range}")
@@ -51,6 +53,10 @@ def main(
     if csv_out:
         export_csv(results, csv_out)
         console.print(f"[green][+] CSV exported to:[/green] {csv_out}")
+
+    if html_out:
+        generate_html_report(results, html_out, range)
+        console.print(f"[green][+] HTML report generated:[/green] {html_out}")
 
 
 if __name__ == "__main__":
