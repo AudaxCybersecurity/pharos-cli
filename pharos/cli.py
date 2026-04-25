@@ -6,20 +6,12 @@ from pharos.banner import print_banner
 from pharos.exporters import export_csv, export_json
 from pharos.scanner import scan_network
 
-app = typer.Typer(
-    help="Pharos - Local network visibility from the command line.",
-    no_args_is_help=True,
-)
+app = typer.Typer(help="Pharos - Local network visibility from the command line.")
 console = Console()
 
 
-@app.callback()
-def main() -> None:
-    """Pharos CLI entry point."""
-
-
-@app.command()
-def scan(
+@app.callback(invoke_without_command=True)
+def main(
     range: str = typer.Option(..., "--range", "-r", help="CIDR range to scan, e.g. 192.168.1.0/24"),
     timeout: int = typer.Option(2, "--timeout", "-t", help="ARP response timeout"),
     json_out: str = typer.Option(None, "--json", help="Export results to JSON file"),
