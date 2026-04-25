@@ -6,8 +6,16 @@ from pharos.banner import print_banner
 from pharos.exporters import export_csv, export_json
 from pharos.scanner import scan_network
 
-app = typer.Typer(help="Pharos - Local network visibility from the command line.")
+app = typer.Typer(
+    help="Pharos - Local network visibility from the command line.",
+    no_args_is_help=True,
+)
 console = Console()
+
+
+@app.callback()
+def main() -> None:
+    """Pharos CLI entry point."""
 
 
 @app.command()
