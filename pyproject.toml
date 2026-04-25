@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pharos-cli"
+version = "0.1.0"
+description = "Local network visibility from the command line."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Audax Cybersecurity" }
+]
+dependencies = [
+    "typer[all]",
+    "rich",
+    "scapy",
+    "mac-vendor-lookup",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+]
+
+[project.scripts]
+pharos = "pharos.cli:app"
+
+[tool.setuptools.packages.find]
+include = ["pharos*"]
