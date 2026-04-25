@@ -75,19 +75,19 @@ When using a virtual environment, `sudo pharos` may not find the command because
 ```bash
 cd ~/pharos-cli
 source venv/bin/activate
-sudo venv/bin/pharos scan --range 192.168.1.0/24
+sudo venv/bin/pharos --range 192.168.1.0/24
 ```
 
 Export results:
 
 ```bash
-sudo venv/bin/pharos scan --range 192.168.1.0/24 --json results.json --csv results.csv
+sudo venv/bin/pharos --range 192.168.1.0/24 --json results.json --csv results.csv
 ```
 
 Use a custom timeout:
 
 ```bash
-sudo venv/bin/pharos scan --range 192.168.1.0/24 --timeout 3
+sudo venv/bin/pharos --range 192.168.1.0/24 --timeout 3
 ```
 
 ## Example Output
