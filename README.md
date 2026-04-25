@@ -45,14 +45,15 @@ Audax Cybersecurity's commercial work extends beyond this tool and includes ente
 
 ## Screenshots
 
-Recommended screenshot placeholders are documented in [`docs/screenshots/README.md`](docs/screenshots/README.md).
+### Terminal Output
+
+![Pharos terminal output](docs/screenshots/pharos-terminal.png)
+
+### HTML Report
+
+![Pharos HTML report](docs/screenshots/pharos-html-report.png)
 
 Before uploading screenshots, remove or mask real client names, public IP addresses, internal hostnames, sensitive MAC addresses, and production network details.
-
-```markdown
-![Pharos terminal output](docs/screenshots/pharos-terminal.png)
-![Pharos HTML report](docs/screenshots/pharos-html-report.png)
-```
 
 ## Example Terminal Output
 
