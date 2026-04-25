@@ -1,22 +1,37 @@
 # Pharos
 
-**Local network visibility from the command line.**
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Defensive Security](https://img.shields.io/badge/focus-defensive%20security-informational)](#responsible-use)
+[![Status](https://img.shields.io/badge/status-early%20release-orange)](#roadmap)
 
-Pharos is a lightweight CLI tool for authorized local network asset visibility, inventory enrichment, and reporting.
+**CLI-based local network visibility for defensive asset discovery and reporting.**
 
-It helps teams quickly understand what devices are present on a local network, enrich observed assets with vendor information, classify common device categories, and export evidence-ready results.
+Pharos is a lightweight command-line tool by **Audax Cybersecurity** for authorized local network asset visibility, inventory enrichment, and evidence-ready reporting.
 
-## Positioning
+It helps security teams, administrators, auditors, and lab operators quickly understand what devices are present on a local network, enrich observed assets with vendor information, classify common device categories, identify IoT hints, and export results to terminal, JSON, CSV, or HTML.
 
-Pharos is designed as a practical visibility layer for security teams, auditors, administrators, and lab environments.
+## Why Pharos
 
-It focuses on asset awareness, not exploitation.
-
-Before hardening, validation, or resilience planning, teams need to answer a basic question:
+Before hardening, validation, or cyber resilience planning, teams need to answer a basic question:
 
 > What actually exists inside the network?
 
-Pharos helps provide that first layer of visibility.
+Pharos provides a practical first visibility layer for defensive assessment workflows.
+
+It focuses on asset awareness, not exploitation.
+
+## Audax Open Field Tools
+
+Pharos is part of Audax Cybersecurity's open-source field tooling initiative, focused on practical tools for:
+
+- Defensive visibility
+- Asset awareness
+- Internal assessment
+- Cyber resilience engineering
+- Evidence collection for technical teams
+
+For organizations that require enterprise-grade adversary intelligence, validation workflows, executive reporting, and cyber resilience evidence management, Audax Cybersecurity provides commercial AI-driven solutions beyond the scope of this open-source tool.
 
 ## Features
 
@@ -31,6 +46,17 @@ Pharos helps provide that first layer of visibility.
 - Standalone HTML report generation
 - Python packaging with a CLI entry point
 - Basic automated tests
+
+## Screenshots
+
+Recommended screenshot placeholders are documented in [`docs/screenshots/README.md`](docs/screenshots/README.md).
+
+Before uploading screenshots, remove or mask real client names, public IP addresses, internal hostnames, sensitive MAC addresses, and production network details.
+
+```markdown
+![Pharos terminal output](docs/screenshots/pharos-terminal.png)
+![Pharos HTML report](docs/screenshots/pharos-html-report.png)
+```
 
 ## Example Terminal Output
 
@@ -102,7 +128,9 @@ sudo venv/bin/pharos --range 192.168.1.0/24 --timeout 3
 
 ## Asset Classification
 
-Pharos uses conservative vendor-based classification to provide quick inventory hints. Current categories include:
+Pharos uses conservative vendor-based classification to provide quick inventory hints. It does not claim exact device identity.
+
+Current categories include:
 
 - Network Infrastructure
 - Camera / Surveillance IoT
@@ -127,13 +155,18 @@ pharos-cli/
 │   ├── exporters.py
 │   ├── report.py
 │   └── scanner.py
+├── docs/
+│   └── screenshots/
 ├── examples/
 │   └── sample-output.json
 ├── tests/
 │   └── test_classifier.py
 ├── .github/workflows/python.yml
-├── .gitignore
+├── CHANGELOG.md
+├── CONTRIBUTING.md
 ├── LICENSE
+├── ROADMAP.md
+├── SECURITY.md
 ├── pyproject.toml
 ├── README.md
 └── requirements.txt
@@ -157,20 +190,32 @@ pytest
 
 ## Roadmap
 
+See [`ROADMAP.md`](ROADMAP.md).
+
+Near-term focus:
+
 - Screenshots and visual examples
-- Watch mode for newly observed devices
-- Passive observation mode
-- Subnet auto-detection
-- Optional lightweight service enrichment
+- Auto subnet detection
+- Interface selection
+- Risk level per asset
+- HTML report improvements
 - Docker image
-- Better asset classification rules
-- HTML report templates
 
 ## Responsible Use
 
 Pharos is intended for authorized internal visibility, asset inventory, lab use, and defensive assessment workflows.
 
 Use it only in environments where you have permission.
+
+Pharos is not an exploitation framework, payload framework, credential access tool, phishing kit, C2 framework, or offensive automation platform.
+
+## Security
+
+Please report security concerns through the process described in [`SECURITY.md`](SECURITY.md).
+
+## Contributing
+
+Contributions are welcome for defensive use cases. See [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ## License
 
