@@ -1,0 +1,5 @@
+typer[all]
+rich
+scapy
+mac-vendor-lookup
+pytest
