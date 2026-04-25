@@ -51,32 +51,43 @@ pharos-cli/
 
 ## Installation
 
+Run the installation commands from the repository root, not from inside the `pharos/` package directory.
+
 ```bash
-git clone https://github.com/AudaxCybersecurity/pharos-cli.git
-cd pharos-cli
+cd ~/pharos-cli
 python3 -m venv venv
 source venv/bin/activate
+pip install --upgrade pip
 pip install -e .
+```
+
+Confirm the CLI is installed:
+
+```bash
+which pharos
+pharos --help
 ```
 
 ## Usage
 
-Run Pharos against an authorized local range:
+When using a virtual environment, `sudo pharos` may not find the command because sudo uses a different PATH. Use the executable inside the virtual environment:
 
 ```bash
-sudo pharos scan --range 192.168.1.0/24
+cd ~/pharos-cli
+source venv/bin/activate
+sudo venv/bin/pharos scan --range 192.168.1.0/24
 ```
 
 Export results:
 
 ```bash
-sudo pharos scan --range 192.168.1.0/24 --json results.json --csv results.csv
+sudo venv/bin/pharos scan --range 192.168.1.0/24 --json results.json --csv results.csv
 ```
 
 Use a custom timeout:
 
 ```bash
-sudo pharos scan --range 192.168.1.0/24 --timeout 3
+sudo venv/bin/pharos scan --range 192.168.1.0/24 --timeout 3
 ```
 
 ## Example Output
@@ -95,6 +106,8 @@ IP Address      MAC Address          Vendor             Type                    
 Install development dependencies:
 
 ```bash
+cd ~/pharos-cli
+source venv/bin/activate
 pip install -e .[dev]
 ```
 
