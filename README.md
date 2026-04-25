@@ -1,52 +1,49 @@
 # Pharos
 
-Pharos is a lightweight command-line tool for local network asset visibility.
+**Local network visibility from the command line.**
 
-It helps authorized teams create a quick inventory of devices observed on a local network, enrich them with vendor information, classify common asset types, and export results for reporting.
+Pharos is a lightweight CLI tool for authorized local network asset visibility, inventory enrichment, and reporting.
 
-## Purpose
+It helps teams quickly understand what devices are present on a local network, enrich observed assets with vendor information, classify common device categories, and export evidence-ready results.
 
-Before security teams can improve resilience, they need a clear view of what exists inside their environment.
+## Positioning
 
-Pharos focuses on visibility, asset awareness, and reporting.
+Pharos is designed as a practical visibility layer for security teams, auditors, administrators, and lab environments.
 
-## Current Version
+It focuses on asset awareness, not exploitation.
 
-v0.1.0
+Before hardening, validation, or resilience planning, teams need to answer a basic question:
+
+> What actually exists inside the network?
+
+Pharos helps provide that first layer of visibility.
 
 ## Features
 
-- Local network asset discovery
+- ARP-based local network discovery
 - MAC vendor enrichment
-- Basic asset classification
+- Improved asset classification
+- IoT and smart-device detection hints
 - Risk hints for common device categories
+- Clean terminal table output
 - JSON export
 - CSV export
-- Clean terminal output
+- Standalone HTML report generation
 - Python packaging with a CLI entry point
 - Basic automated tests
 
-## Project Structure
+## Example Terminal Output
 
 ```text
-pharos-cli/
-├── pharos/
-│   ├── __init__.py
-│   ├── banner.py
-│   ├── classifier.py
-│   ├── cli.py
-│   ├── exporters.py
-│   └── scanner.py
-├── examples/
-│   └── sample-output.json
-├── tests/
-│   └── test_classifier.py
-├── .github/workflows/python.yml
-├── .gitignore
-├── LICENSE
-├── pyproject.toml
-├── README.md
-└── requirements.txt
+PHAROS - Local Network Visibility CLI
+
+[+] Scanning range: 192.168.1.0/24
+
+Discovered Assets
+IP Address      MAC Address          Vendor                               Type                    Risk Hint
+192.168.1.1     74:24:9f:80:b5:d1    TIBRO Corp.                          Network Infrastructure  Management or critical network asset - validate admin exposure
+192.168.1.181   58:05:d9:0f:09:4b    Seiko Epson Corporation              Printer / Office Device Often overlooked office asset - review admin interface and firmware
+192.168.1.199   f0:c9:d1:32:ba:2c    GD Midea Air-Conditioning Equipment  Smart Home / IoT        IoT device - verify isolation, firmware posture, and business need
 ```
 
 ## Installation
@@ -54,7 +51,8 @@ pharos-cli/
 Run the installation commands from the repository root, not from inside the `pharos/` package directory.
 
 ```bash
-cd ~/pharos-cli
+git clone https://github.com/AudaxCybersecurity/pharos-cli.git
+cd pharos-cli
 python3 -m venv venv
 source venv/bin/activate
 pip install --upgrade pip
@@ -78,10 +76,22 @@ source venv/bin/activate
 sudo venv/bin/pharos --range 192.168.1.0/24
 ```
 
-Export results:
+Export JSON and CSV:
 
 ```bash
 sudo venv/bin/pharos --range 192.168.1.0/24 --json results.json --csv results.csv
+```
+
+Generate an HTML report:
+
+```bash
+sudo venv/bin/pharos --range 192.168.1.0/24 --html pharos-report.html
+```
+
+Generate all outputs:
+
+```bash
+sudo venv/bin/pharos --range 192.168.1.0/24 --json results.json --csv results.csv --html pharos-report.html
 ```
 
 Use a custom timeout:
@@ -90,15 +100,43 @@ Use a custom timeout:
 sudo venv/bin/pharos --range 192.168.1.0/24 --timeout 3
 ```
 
-## Example Output
+## Asset Classification
+
+Pharos uses conservative vendor-based classification to provide quick inventory hints. Current categories include:
+
+- Network Infrastructure
+- Camera / Surveillance IoT
+- Smart Home / IoT
+- Printer / Office Device
+- Endpoint / Mobile
+- Workstation / Endpoint
+- Virtualized Asset
+- Embedded / Lab IoT
+- Generic Network Asset
+- Unknown Asset
+
+## Project Structure
 
 ```text
-PHAROS - Local Network Visibility CLI
-
-Discovered Assets
-IP Address      MAC Address          Vendor             Type                    Risk Hint
-192.168.1.1     aa:bb:cc:dd:ee:ff    MikroTik           Network Infrastructure  Management or critical network asset
-192.168.1.45    11:22:33:44:55:66    Hikvision          Camera / IoT            Surveillance or unmanaged IoT asset
+pharos-cli/
+├── pharos/
+│   ├── __init__.py
+│   ├── banner.py
+│   ├── classifier.py
+│   ├── cli.py
+│   ├── exporters.py
+│   ├── report.py
+│   └── scanner.py
+├── examples/
+│   └── sample-output.json
+├── tests/
+│   └── test_classifier.py
+├── .github/workflows/python.yml
+├── .gitignore
+├── LICENSE
+├── pyproject.toml
+├── README.md
+└── requirements.txt
 ```
 
 ## Development
@@ -119,13 +157,14 @@ pytest
 
 ## Roadmap
 
+- Screenshots and visual examples
 - Watch mode for newly observed devices
 - Passive observation mode
-- HTML reporting
 - Subnet auto-detection
 - Optional lightweight service enrichment
 - Docker image
 - Better asset classification rules
+- HTML report templates
 
 ## Responsible Use
 
