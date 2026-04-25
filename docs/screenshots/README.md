@@ -1,12 +1,31 @@
 # Screenshots
 
-This directory is reserved for terminal and HTML report screenshots.
+This folder is reserved for sanitized Pharos screenshots.
 
-Recommended screenshots before making the repository public:
+Recommended files:
 
-1. Terminal discovery table
-2. JSON/CSV export command
-3. HTML report overview
-4. Asset classification examples
+- `pharos-terminal.png` - terminal output with sanitized network data
+- `pharos-html-report.png` - HTML report screenshot with sanitized network data
 
-Avoid uploading screenshots that expose real client names, public IP addresses, internal hostnames, sensitive MAC addresses, or production network details.
+## Screenshot Safety Checklist
+
+Before committing screenshots, remove or mask:
+
+- Client names
+- Public IP addresses
+- Internal hostnames
+- Sensitive MAC addresses
+- Usernames
+- Wi-Fi names
+- VPN names
+- Physical addresses
+- Any production-only identifiers
+
+Use documentation-safe sample data whenever possible.
+
+## README Usage
+
+```markdown
+![Pharos terminal output](docs/screenshots/pharos-terminal.png)
+![Pharos HTML report](docs/screenshots/pharos-html-report.png)
+```
