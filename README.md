@@ -21,17 +21,13 @@ Pharos provides a practical first visibility layer for defensive assessment work
 
 It focuses on asset awareness, not exploitation.
 
-## Audax Open Field Tools
+## About Audax Cybersecurity
 
-Pharos is part of Audax Cybersecurity's open-source field tooling initiative, focused on practical tools for:
+Audax Cybersecurity develops AI-driven Adversary Intelligence and Cyber Resilience solutions for organizations that need to connect threat intelligence, technical defense, validation, and executive resilience documentation into a unified operational model.
 
-- Defensive visibility
-- Asset awareness
-- Internal assessment
-- Cyber resilience engineering
-- Evidence collection for technical teams
+Pharos is a limited open-source utility released by Audax Cybersecurity to support authorized visibility, asset awareness, and defensive assessment workflows.
 
-For organizations that require enterprise-grade adversary intelligence, validation workflows, executive reporting, and cyber resilience evidence management, Audax Cybersecurity provides commercial AI-driven solutions beyond the scope of this open-source tool.
+Audax Cybersecurity's commercial work extends beyond this tool and includes enterprise-grade adversary intelligence, validation workflows, executive reporting, cyber resilience evidence management, and tailored security services for organizations with higher assurance requirements.
 
 ## Features
 
