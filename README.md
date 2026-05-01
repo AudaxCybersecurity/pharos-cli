@@ -53,8 +53,6 @@ Audax Cybersecurity's commercial work extends beyond this tool and includes ente
 
 ![Pharos HTML report](docs/screenshots/pharos-html-report.png)
 
-Before uploading screenshots, remove or mask real client names, public IP addresses, internal hostnames, sensitive MAC addresses, and production network details.
-
 ## Example Terminal Output
 
 ```text
